@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@layer base {
+  html,
+  body {
+    @apply m-0 antialiased bg-[#0a192f] text-[#e6f1ff] overflow-x-hidden;
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .font-montserrat {
+    font-family: "Montserrat", sans-serif;
+  }
+}
