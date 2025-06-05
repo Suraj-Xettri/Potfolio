@@ -60,7 +60,7 @@ export default function About() {
               <div className="absolute inset-0 border-2 border-[#64ffda] rounded translate-x-5 translate-y-5"></div>
               <div className="absolute inset-0 bg-[#0a192f]/30 hover:bg-transparent transition-all duration-300 cursor-pointer z-10"></div>
               <img
-                src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20a%20male%20software%20developer%20with%20modern%20tech%20aesthetic%2C%20dark%20navy%20blue%20background%20with%20subtle%20tech%20elements%2C%20professional%20headshot%20style%2C%20neutral%20expression%2C%20modern%20professional%20attire%2C%20high%20quality%20studio%20lighting%2C%20ultra-detailed%208k%20resolution&width=400&height=400&seq=3&orientation=squarish"
+                src="my.jpg"
                 alt="John Doe"
                 className="w-full h-full object-cover rounded shadow-lg"
               />
