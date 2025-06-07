@@ -1,10 +1,21 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { navLinks } from "../../data/navLinks";
 import useScrollPosition from "../../hooks/useScrollPosition";
 
-export default function Navbar({ activeLink, scrollToSection }) {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
   const isScrolled = useScrollPosition();
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setActiveLink(sectionId);
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <nav
@@ -15,8 +26,8 @@ export default function Navbar({ activeLink, scrollToSection }) {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a
-          href="#home"
+        <Link
+          to="/"
           className="text-2xl font-montserrat font-bold text-[#64ffda]"
           onClick={(e) => {
             e.preventDefault();
@@ -26,7 +37,7 @@ export default function Navbar({ activeLink, scrollToSection }) {
           <span className="text-[#00a8ff]">&lt;</span>
           Dev<span className="text-[#00a8ff]">Portfolio</span>
           <span className="text-[#00a8ff]">/&gt;</span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
@@ -34,7 +45,7 @@ export default function Navbar({ activeLink, scrollToSection }) {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`relative font-montserrat text-sm uppercase tracking-wider cursor-pointer ${
+              className={`relative font-montserrat text-sm uppercase tracking-wider ${
                 activeLink === item.id
                   ? "text-[#64ffda]"
                   : "text-[#e6f1ff] hover:text-[#64ffda]"
@@ -46,11 +57,17 @@ export default function Navbar({ activeLink, scrollToSection }) {
               )}
             </button>
           ))}
+          <Link
+            to="/projects"
+            className="relative font-montserrat text-sm uppercase tracking-wider text-[#e6f1ff] hover:text-[#64ffda]"
+          >
+            All Projects
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-[#e6f1ff] focus:outline-none cursor-pointer"
+          className="md:hidden text-[#e6f1ff] focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <div
@@ -93,13 +110,22 @@ export default function Navbar({ activeLink, scrollToSection }) {
                 scrollToSection(item.id);
                 setIsMenuOpen(false);
               }}
-              className={`py-2 font-montserrat text-sm uppercase tracking-wider cursor-pointer ${
+              className={`py-2 font-montserrat text-sm uppercase tracking-wider ${
                 activeLink === item.id ? "text-[#64ffda]" : "text-[#e6f1ff]"
               }`}
             >
               {item.label}
             </button>
           ))}
+          <Link
+            to="/projects"
+            className={`py-2 font-montserrat text-sm uppercase tracking-wider ${
+              activeLink === "projects" ? "text-[#64ffda]" : "text-[#e6f1ff]"
+            }`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            All Projects
+          </Link>
         </div>
       </div>
     </nav>

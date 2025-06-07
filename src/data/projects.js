@@ -32,3 +32,19 @@ export const projects = [
       "https://readdy.ai/api/search-image?query=real%20estate%20property%20finder%20application%20with%20map%20interface%2C%20property%20listings%20with%20high%20quality%20images%2C%20dark%20theme%20with%20blue%20and%20teal%20accents%2C%20search%20filters%2C%20property%20details%20panel%2C%20professional%20UI%20mockup%2C%20ultra-detailed%208k%20resolution&width=600&height=400&seq=7&orientation=landscape",
   },
 ];
+
+export const allProjects = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    description:
+      "A full-featured e-commerce platform built with the MERN stack. Features include user authentication, product management, shopping cart, and payment processing.",
+    tags: ["MongoDB", "Express", "React", "Node.js", "Redux"],
+    image:
+      "https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20interface%20with%20dark%20theme%2C%20product%20grid%20layout%20with%20high%20quality%20product%20images%2C%20shopping%20cart%20functionality%2C%20clean%20minimalist%20design%20with%20blue%20and%20teal%20accents%2C%20professional%20UI%20mockup%2C%20ultra-detailed%208k%20resolution&width=600&height=400&seq=4&orientation=landscape",
+    date: "2025-05-10",
+    popularity: 95,
+    demoLink: "#",
+    repoLink: "#",
+  },
+];

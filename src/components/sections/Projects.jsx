@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ProjectCard from "../ui/ProjectCard";
 import { projects } from "../../data/projects";
 
@@ -11,14 +12,16 @@ export default function Projects() {
           <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#64ffda]/50"></span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+          {projects.slice(0, 4).map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
         <div className="text-center mt-12">
-          <button className="px-8 py-3 border-2 border-[#64ffda] text-[#64ffda] font-montserrat rounded hover:bg-[#64ffda]/10 transition-all duration-300 cursor-pointer">
-            View All Projects <i className="fas fa-arrow-right ml-2"></i>
-          </button>
+          <Link to="/projects">
+            <button className="px-8 py-3 border-2 border-[#64ffda] text-[#64ffda] font-montserrat rounded hover:bg-[#64ffda]/10 transition-all duration-300">
+              View All Projects <i className="fas fa-arrow-right ml-2"></i>
+            </button>
+          </Link>
         </div>
       </div>
     </section>
